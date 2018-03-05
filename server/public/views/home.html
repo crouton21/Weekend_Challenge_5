@@ -14,11 +14,47 @@
 <input id="keywordIn" placeholder="Keywords" ng-model="sc.newSearch.keyword">
 <button ng-click="sc.searchFor(sc.newSearch)">Search</button>
 
-<div ng-repeat="result in sc.starwars.searchResults">
+<!-- display people results -->
+<div ng-switch="sc.starwars.type">
+<div ng-switch-when="people" ng-repeat="result in sc.starwars.searchResults">
     <div>Name: {{result.name}}</div>
     <div>Birth Year: {{result.birth_year}}</div>
     <div>Gender: {{result.gender}}</div>
-
-
-    <button ng-click="sc.addFavorite(result.url, result.name)">Add Favorite</button>
+    <button ng-click="sc.addFavoritePerson(result.url, result.name, result.birth_year, result.gender)">Add Favorite</button>
+</div>
+<!-- display planet results -->
+<div ng-switch-when="planets" ng-repeat="result in sc.starwars.searchResults">
+    <div>Planet Name: {{result.name}}</div>
+    <div>Climate: {{result.climate}}</div>
+    <div>Population: {{result.population}}</div>
+    <button ng-click="sc.addFavoritePlanet(result.url, result.name, result.climate, result.population)">Add Favorite</button>
+</div>
+<!-- display films results -->
+<div ng-switch-when="films" ng-repeat="result in sc.starwars.searchResults">
+        <div>Title: {{result.title}}</div>
+        <div>Release Date: {{result.release_date}}</div>
+        <div>Director: {{result.director}}</div>
+        <button ng-click="sc.addFavoriteFilm(result.url, result.title, result.release_date, result.director)">Add Favorite</button>
+</div>
+<!-- display starships results -->
+<div ng-switch-when="starships" ng-repeat="result in sc.starwars.searchResults">
+    <div>Starship Name: {{result.name}}</div>
+    <div>Model: {{result.model}}</div>
+    <div>Passengers: {{result.passengers}}</div>
+    <button ng-click="sc.addFavoriteStarship(result.url, result.name, result.model, result.passengers)">Add Favorite</button>
+</div>
+<!-- display vehicles results -->
+<div ng-switch-when="vehicles" ng-repeat="result in sc.starwars.searchResults">
+    <div>Vehicle Name: {{result.name}}</div>
+    <div>Manufacturer: {{result.manufacturer}}</div>
+    <div>Model: {{result.model}}</div>
+    <button ng-click="sc.addFavoriteVehicle(result.url, result.name, result.manufacturer, result.model)">Add Favorite</button>
+</div> 
+<!-- display species results -->
+<div ng-switch-when="species" ng-repeat="result in sc.starwars.searchResults">
+        <div>Species Name: {{result.name}}</div>
+        <div>Language: {{result.language}}</div>
+        <div>Classification: {{result.classification}}</div>
+        <button ng-click="sc.addFavoriteSpecies(result.url, result.name, result.language, result.classification)">Add Favorite</button>
+</div>  
 </div>

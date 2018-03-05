@@ -1,0 +1,42 @@
+<h3>Favorites From Star Wars</h3>
+
+<div ng-repeat="favorite in fc.starwars.favorites">
+<div ng-switch="favorite.type">
+        <div ng-switch-when="people">
+            <div>Name: {{favorite.name}}</div>
+            <div>Birth Year: {{favorite.birth_year}}</div>
+            <div>Gender: {{favorite.gender}}</div>
+        </div>
+        <!-- display planet results -->
+        <div ng-switch-when="planets">
+            <div>Planet Name: {{favorite.name}}</div>
+            <div>Climate: {{favorite.climate}}</div>
+            <div>Population: {{favorite.population}}</div>
+        </div>
+        <!-- display films results -->
+        <div ng-switch-when="films">
+                <div>Title: {{favorite.title}}</div>
+                <div>Release Date: {{favorite.release_date}}</div>
+                <div>Director: {{favorite.director}}</div>
+        </div>
+        <!-- display starships results -->
+        <div ng-switch-when="starships">
+            <div>Starship Name: {{favorite.name}}</div>
+            <div>Model: {{favorite.model}}</div>
+            <div>Passengers: {{favorite.passengers}}</div>
+        </div>
+        <!-- display vehicles results -->
+        <div ng-switch-when="vehicles">
+            <div>Vehicle Name: {{favorite.name}}</div>
+            <div>Manufacturer: {{favorite.manufacturer}}</div>
+            <div>Model: {{favorite.model}}</div>
+        </div> 
+        <!-- display species results -->
+        <div ng-switch-when="species">
+                <div>Species Name: {{favorite.name}}</div>
+                <div>Language: {{favorite.language}}</div>
+                <div>Classification: {{favorite.classification}}</div>
+        </div>  
+        <button ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
+        </div>
+                        
