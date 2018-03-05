@@ -13,3 +13,7 @@
 <label for="#keywordIn">Search:</label>
 <input id="keywordIn" placeholder="Keywords" ng-model="sc.newSearch.keyword">
 <button ng-click="sc.searchFor(sc.newSearch)">Search</button>
+
+<div ng-repeat="result in sc.starwars.searchResults">
+    <div class="box">{{result.name}}</div>
+</div>
