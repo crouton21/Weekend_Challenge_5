@@ -11,12 +11,20 @@
     <script src="scripts/services/starwars.service.js"></script>
     <script src="scripts/controllers/favorite.controller.js"></script>
     <script src="scripts/controllers/search.controller.js"></script>
+    <script src="vendors/angular-material.min.js"></script>
+    <script src="vendors/angular-animate.js"></script>
+    <script src="vendors/angular-aria.js"></script>
+    <link rel="stylesheet" href="vendors/angular-material.css">
+    <script src="vendors/angular-messages.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <bod ng-app="starwarsApp">
+    <header>
     <nav>
     <a href="/#!home">Home</a>
     <a href="/#!favorites">Favorites</a>
     </nav>
+    </header>
     <main ng-view>
 
     </main>

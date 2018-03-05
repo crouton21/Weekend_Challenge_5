@@ -1,6 +1,6 @@
-const app = angular.module('starwarsApp', ['ngRoute']); 
+const app = angular.module('starwarsApp', ['ngRoute','ngMaterial', 'ngAria', 'ngMessages']); 
 
-app.config(function($routeProvider){
+app.config(function($routeProvider, $mdThemingProvider){
   $routeProvider.when('/', {
     templateUrl: 'views/home.html',
     controller: 'SearchController as sc'
@@ -10,5 +10,12 @@ app.config(function($routeProvider){
   }).when('/home', {
     redirectTo: '/'
   }).otherwise({ template: '<h1>404 Page Not Found</h1>' });
-});
 
+})
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+  .primaryPalette('light-blue')
+  .accentPalette('cyan')
+  .warnPalette('teal')
+  .backgroundPalette('light-blue');
+});
