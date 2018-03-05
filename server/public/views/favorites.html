@@ -1,47 +1,48 @@
 <h3>Favorites From Star Wars</h3>
-
-<div ng-repeat="favorite in fc.starwars.favorites">
+<div class="row">
+<div class="col-xs-4" ng-repeat="favorite in fc.starwars.favorites">
 <div ng-switch="favorite.type">
         <div ng-switch-when="people" class="box">
             <div>Name: {{favorite.name}}</div>
             <div>Birth Year: {{favorite.birth_year}}</div>
             <div>Gender: {{favorite.gender}}</div>
-            <button ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
+            <button class="btn btn-default" ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
         </div>
         <!-- display planet results -->
         <div ng-switch-when="planets" class="box">
             <div>Planet Name: {{favorite.name}}</div>
             <div>Climate: {{favorite.climate}}</div>
             <div>Population: {{favorite.population}}</div>
-            <button ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
+            <button class="btn btn-default" ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
         </div>
         <!-- display films results -->
         <div ng-switch-when="films" class="box">
                 <div>Title: {{favorite.title}}</div>
                 <div>Release Date: {{favorite.release_date}}</div>
                 <div>Director: {{favorite.director}}</div>
-                <button ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
+                <button class="btn btn-default" ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
         </div>
         <!-- display starships results -->
         <div ng-switch-when="starships" class="box">
             <div>Starship Name: {{favorite.name}}</div>
             <div>Model: {{favorite.model}}</div>
             <div>Passengers: {{favorite.passengers}}</div>
-            <button ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
+            <button class="btn btn-default" ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
         </div>
         <!-- display vehicles results -->
         <div ng-switch-when="vehicles" class="box">
             <div>Vehicle Name: {{favorite.name}}</div>
             <div>Manufacturer: {{favorite.manufacturer}}</div>
             <div>Model: {{favorite.model}}</div>
-            <button ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
+            <button class="btn btn-default" ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
         </div> 
         <!-- display species results -->
         <div ng-switch-when="species" class="box">
                 <div>Species Name: {{favorite.name}}</div>
                 <div>Language: {{favorite.language}}</div>
                 <div>Classification: {{favorite.classification}}</div>
-                <button ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
+                <button class="btn btn-default" ng-click="fc.removeFavorite(favorite._id)">Remove Favorite</button>
         </div>  
         </div>
+    </div>
                         
