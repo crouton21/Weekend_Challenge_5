@@ -15,5 +15,10 @@
 <button ng-click="sc.searchFor(sc.newSearch)">Search</button>
 
 <div ng-repeat="result in sc.starwars.searchResults">
-    <div class="box">{{result.name}}</div>
+    <div>Name: {{result.name}}</div>
+    <div>Birth Year: {{result.birth_year}}</div>
+    <div>Gender: {{result.gender}}</div>
+
+
+    <button ng-click="sc.addFavorite(result.url, result.name)">Add Favorite</button>
 </div>

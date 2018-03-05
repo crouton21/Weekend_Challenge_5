@@ -4,5 +4,6 @@ app.controller('SearchController', ['StarwarsService', function(StarwarsService)
 
     self.starwars = StarwarsService.starwars;
     self.searchFor = StarwarsService.searchFor;
+    self.addFavorite = StarwarsService.addFavorite;
     
   }]);

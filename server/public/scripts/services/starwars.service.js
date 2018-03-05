@@ -12,10 +12,30 @@ app.service('StarwarsService', ['$http', function($http) {
         }).then(function(response){
             console.log('Search results:', response.data.results);
             self.starwars.searchResults = response.data.results;
+            self.starwars.newSearch = {};
             console.log('searchResults array:', self.starwars.searchResults);
             
         }).catch(function(error){
             console.error('Error finding search', error)
         })
     }
+
+    self.addFavorite = function(url, name){
+        console.log('In addFavorite function', url);
+        
+        $http({
+            method: 'POST',
+            url: '/starwars',
+            data:{
+                url: url,
+                name: name
+            }
+        }).then(function(response){
+
+            
+        }).catch(function(error){
+            console.error('Error finding search', error)
+        })
+    }
+
 }]);
